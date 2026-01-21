@@ -1,5 +1,7 @@
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa"
 import profileImg from "../assets/hero.png"
+import { motion } from "framer-motion"
+
 
 /* ================= DYNAMIC DATA ================= */
 const heroData = {
@@ -57,17 +59,30 @@ const Home = () => {
 
         {/* IMAGE + ICONS */}
         <div className="flex flex-col items-center -mt-8 lg:mt-0 md:hidden lg:flex">
-          <img src={heroData.image} alt="profile" />
+         <motion.img
+        src={heroData.image}
+        alt="profile"
+        animate={{ y: [0, -16, 0] }}
+        transition={{
+        duration: 4,          
+        repeat: Infinity,
+        repeatType: "mirror",
+        ease: "easeInOut",
+        }}
+        />
+
+
 
           <div className="flex gap-5 ">
             {heroData.socials.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                className="w-10 h-10  flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition"
+              <motion.a
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white"
               >
-                {item.icon}
-              </a>
+             {item.icon}
+            </motion.a>
+
             ))}
           </div>
         </div>
