@@ -52,7 +52,7 @@ const Home = () => {
             {heroData.description}
           </p>
 
-          <button className="bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-lg font-medium text-lg">
+          <button className="bg-orange-500 hover:bg-orange-600 transition px-4 py-3 sm:px-8 sm:py-4 rounded-lg font-medium text-lg">
             {heroData.buttonText}
           </button>
         </div>

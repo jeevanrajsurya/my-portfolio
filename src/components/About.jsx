@@ -80,7 +80,7 @@ const About = () => {
           {aboutData.title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10 mb-16 sm:mb-20 ">
           {aboutData.sections.map((item) => (
             <p
               key={item.id}
@@ -101,7 +101,7 @@ const About = () => {
             <div
               key={card.id}
               className="
-                bg-slate-800/70 rounded-xl p-6
+                bg-slate-800/70 rounded-xl p-4
                 border border-white/5
                 transition-all duration-300
                 hover:-translate-y-1
