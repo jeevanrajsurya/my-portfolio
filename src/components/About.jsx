@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 const aboutData = {
   title: "About Me",
   sections: [
@@ -98,9 +100,13 @@ const About = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 sm:mb-20">
           {approachData.cards.map((card) => (
-            <div
+            <motion.div
               key={card.id}
-              className="
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: card.id * 0.08 }}
+              viewport={{ once: true }}
+                className="
                 bg-slate-800/70 rounded-xl p-4
                 border border-white/5
                 transition-all duration-300
@@ -115,7 +121,7 @@ const About = () => {
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
                 {card.text}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

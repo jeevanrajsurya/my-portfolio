@@ -202,6 +202,9 @@ const Skills = () => {
                     p-4
                     border
                     border-white/5
+                    transition-all duration-300
+                    hover:-translate-y-1
+                    hover:shadow-[0_12px_40px_rgba(37,99,235,0.65)]
                   "
                 >
 
