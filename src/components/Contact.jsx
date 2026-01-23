@@ -1,24 +1,54 @@
 import { motion } from "framer-motion"
-import contactImg from "../assets/contact.png"
+import { useState } from "react"
 
-/* ================= DYNAMIC DATA ================= */
 const contactData = {
   title: "Contact Me",
-  fields: [
-    { id: 1, type: "text", placeholder: "Your Name" },
-    { id: 2, type: "email", placeholder: "Your Email" },
-    { id: 3, type: "textarea", placeholder: "Your Message" },
-  ],
   buttonText: "Send Message",
-  image: contactImg,
 }
 
 const Contact = () => {
-  return (
-    <section id="Contact" className="w-full bg-slate-900 text-white py-8 sm:py-14">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [error, setError] = useState("")
 
-        {/* CENTER HEADING */}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    // ✅ Basic Validation
+    if (!name || !email || !message) {
+      setError("Please fill all fields")
+      return
+    }
+
+    // ✅ Email Validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailPattern.test(email)) {
+      setError("Enter a valid email address")
+      return
+    }
+
+    setError("")
+
+    // ✅ WhatsApp Message Format
+    const phoneNumber = "918778998453" // CHANGE TO YOUR NUMBER
+
+    const whatsappMessage = `Hello Jeevanraj! 👋%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`
+
+    // ✅ Open WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank")
+
+    // ✅ Reset Form
+    setName("")
+    setEmail("")
+    setMessage("")
+  }
+
+  return (
+    <section id="Contact" className="w-full bg-slate-900 text-white py-10 sm:py-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+
+        {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,61 +59,59 @@ const Contact = () => {
           {contactData.title}
         </motion.h2>
 
-        {/* IMAGE CENTER */}
-        {/* <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
-          <motion.img
-            src={contactData.image}
-            alt="contact"
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-64 sm:w-80 md:w-96"
-          />
-        </motion.div> */}
-
-        {/* FORM CENTER */}
-        <motion.div
+        {/* FORM */}
+        <motion.form
+          onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="flex justify-center"
+          className="space-y-6 max-w-xl mx-auto"
         >
-          <form className="space-y-6 w-full max-w-xl">
 
-            {contactData.fields.map((field) =>
-              field.type === "textarea" ? (
-                <textarea
-                  key={field.id}
-                  placeholder={field.placeholder}
-                  rows="5"
-                  className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition resize-none"
-                />
-              ) : (
-                <input
-                  key={field.id}
-                  type={field.type}
-                  placeholder={field.placeholder}
-                  className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition"
-                />
-              )
-            )}
+          {/* ERROR MESSAGE */}
+          {error && (
+            <p className="text-red-500 text-sm font-medium">
+              {error}
+            </p>
+          )}
 
-            {/* BUTTON */}
-            <button
-              type="submit"
-              className="bg-blue-600 hover:bg-blue-700 transition px-10 py-3 rounded-lg font-semibold text-lg w-full sm:w-auto"
-            >
-              {contactData.buttonText}
-            </button>
+          {/* NAME */}
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition"
+          />
 
-          </form>
-        </motion.div>
+          {/* EMAIL */}
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition"
+          />
+
+          {/* MESSAGE */}
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition resize-none"
+          />
+
+          {/* BUTTON */}
+          <button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-700 transition px-10 py-3 rounded-lg font-semibold text-lg w-full"
+          >
+            {contactData.buttonText}
+          </button>
+
+        </motion.form>
 
       </div>
     </section>
