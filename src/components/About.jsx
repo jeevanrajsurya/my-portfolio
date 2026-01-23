@@ -5,23 +5,23 @@ const aboutData = {
   sections: [
     {
       id: 1,
-      text: "I am a passionate and dedicated Frontend Developer with a strong foundation in building dynamic and responsive web applications. With expertise across modern technologies and frameworks, I aim to create seamless user experiences and efficient, maintainable codebases. My strengths lie in adaptability, problem-solving, and continuous learning.",
+      text: "I am a passionate Full Stack Developer with hands-on experience in building modern, responsive, and scalable web applications using the MERN Stack. I focus on creating clean user interfaces while also writing strong backend logic and APIs.",
     },
     {
       id: 2,
-      text: "My approach to development is user-centric. I put myself in the shoes of end-users, striving to understand their needs and pain points. This empathy drives my design and development choices, ensuring that the solutions I create genuinely enhance user experiences.",
+      text: "As an Electronics and Communication Engineering graduate, I transitioned into software development with a strong interest in problem-solving, system design, and real-world application development. I enjoy turning ideas into fully functional digital products.",
     },
     {
       id: 3,
-      text: "From my early days experimenting with HTML and CSS to mastering JavaScript and diving into frameworks like React, Vue, and Angular, my journey has been both challenging and rewarding. I believe in writing clean, modular, and scalable code.",
+      text: "My journey started with HTML, CSS, and JavaScript, and later expanded into React, Node.js, Express.js, and MongoDB. I believe in writing clean, modular, and maintainable code that follows best practices and industry standards.",
     },
     {
       id: 4,
-      text: "In addition to frontend expertise, I have experience with backend technologies such as Node.js and GraphQL. I thrive in collaborative environments, enjoy sharing knowledge, and continuously improve my skills through hands-on projects and learning.",
+      text: "Beyond frontend development, I have experience working with backend systems, REST APIs, authentication, databases, and full stack application workflows. I enjoy building complete end-to-end solutions rather than just isolated features.",
     },
     {
       id: 5,
-      text: "I enjoy keeping up with the latest industry trends and continuously improving my skills through online courses, workshops, and hands-on projects.",
+      text: "I am a continuous learner who actively improves skills through real-world projects, coding practice, and exploring new technologies. My goal is to contribute to impactful products while growing as a professional developer.",
     },
   ],
 }
@@ -31,28 +31,28 @@ const approachData = {
   cards: [
     {
       id: 1,
-      heading: "User Experience",
-      text: "Prioritizing intuitive and engaging user interfaces.",
+      heading: "User-Focused Design",
+      text: "Designing intuitive and user-friendly interfaces with real-world usability in mind.",
     },
     {
       id: 2,
-      heading: "Performance Optimization",
-      text: "Ensuring fast load times and smooth interactions.",
+      heading: "Scalable Development",
+      text: "Building applications that scale efficiently with clean architecture and structure.",
     },
     {
       id: 3,
-      heading: "Responsive Design",
-      text: "Creating adaptable layouts for various devices and screen sizes.",
+      heading: "Performance & Optimization",
+      text: "Optimizing both frontend and backend for speed, efficiency, and reliability.",
     },
     {
       id: 4,
-      heading: "Component Reusability",
-      text: "Building modular components to streamline development and maintenance.",
+      heading: "Reusable Components & APIs",
+      text: "Creating modular UI components and reusable backend services for maintainability.",
     },
     {
       id: 5,
-      heading: "Testing",
-      text: "Implementing thorough testing strategies to maintain high code quality.",
+      heading: "Code Quality & Best Practices",
+      text: "Writing clean, secure, and maintainable code with strong attention to detail.",
     },
   ],
 }
@@ -62,14 +62,15 @@ const beyondCodingData = {
   sections: [
     {
       id: 1,
-      text: "In my spare time, I love exploring new frontend technologies, participating in hackathons, and contributing to open-source projects. These activities not only sharpen my skills but also allow me to give back to the community and stay connected with fellow developers.",
+      text: "Outside of coding, I enjoy exploring new technologies, improving my problem-solving skills, and working on personal projects that strengthen my full stack development knowledge.",
     },
     {
       id: 2,
-      text: "I am excited to bring my expertise and enthusiasm to new challenges and opportunities, and I look forward to contributing to innovative projects that make a meaningful difference.",
+      text: "I am highly motivated to grow as a software developer, contribute to impactful teams, and take on challenging opportunities that help me build meaningful and scalable digital solutions.",
     },
   ],
 }
+
 
 
 const About = () => {

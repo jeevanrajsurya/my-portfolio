@@ -13,17 +13,16 @@ const projectsData = {
   projects: [
     {
       id: 1,
-      name: "Bookmyshow",
+      name: "BookMyShow Clone",
       description:
-        "A smart AI-powered chatbot interface built with React, enabling interactive communication using modern UI components.",
+        "A Full Stack movie ticket booking web application built using MERN Stack. Includes movie listings, seat selection UI, user authentication, and a smooth booking experience with responsive design.",
       image: project1,
-      tag: "React Project",
+      tag: "MERN Stack Project",
       link: "#",
     },
-   
-   
   ],
 }
+
 
 const Projects = () => {
 

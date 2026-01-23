@@ -5,13 +5,13 @@ import { motion } from "framer-motion"
 
 /* ================= DYNAMIC DATA ================= */
 const heroData = {
-  greeting: "Hi, I am",
+  greeting: "Hello, I'm",
   name: "Jeevanraj Chithambaram",
-  titleLine1: "FULL-STACK",
+  titleLine1: "FULL STACK",
   titleLine2: "DEVELOPER",
   description:
-    "I specialize in crafting seamless user interfaces and delightful experiences with React.js . Passionate about building accessible and engaging web applications.",
-  buttonText: "View My Work",
+    "I am a passionate Full Stack Developer specializing in MERN Stack. I build scalable, responsive, and high-performance web applications with strong focus on UI, backend logic, APIs, and databases. I enjoy solving real-world problems and continuously improving my development skills.",
+  buttonText: "View My Projects",
   image: profileImg,
   socials: [
     { icon: <FaFacebookF />, link: "#" },
@@ -19,6 +19,7 @@ const heroData = {
     { icon: <FaGithub />, link: "#" },
   ],
 }
+
 
 
 const Home = () => {
