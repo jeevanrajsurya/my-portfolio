@@ -13,9 +13,9 @@ const heroData = {
   buttonText: "View My Projects",
   image: profileImg,
   socials: [
-    { icon: <FaFacebookF />, link: "#" },
     { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/c-jeevanraj/" },
     { icon: <FaGithub />, link: "https://github.com/jeevanrajsurya/" },
+    // { icon: <FaFacebookF />, link: "#" },
   ],
 }
 

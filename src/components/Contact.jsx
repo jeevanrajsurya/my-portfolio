@@ -16,38 +16,49 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    //  Reset messages
+    // Reset messages
     setError("")
     setSuccess("")
 
-    //  Empty field validation
+    // Basic validation
     if (!name || !email || !message) {
       setError("Please fill all fields")
       return
     }
 
-    //  Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailPattern.test(email)) {
-      setError("Enter a valid email address")
+    // Ultra strict email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9.-]{3,}\.[a-zA-Z]{2,}$/
+
+    if (!email.trim()) {
+      setError("Email is required")
       return
     }
 
-    //  WhatsApp number 
+    if (!email.includes("@")) {
+      setError("Email must contain @ symbol")
+      return
+    }
+
+    if (!emailPattern.test(email.trim())) {
+      setError("Enter a valid email like: yourname@gmail.com")
+      return
+    }
+
+    // WhatsApp number (CHANGE IF NEEDED)
     const phoneNumber = "918778998453"
 
-    //  WhatsApp message format
-    const whatsappMessage = `Hello Jeevanraj! 👋%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`
+    // WhatsApp message format
+    const whatsappMessage = `Hello Jeevanraj! %0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`
 
-    // Success message to user
+    // Show success message
     setSuccess("Message sent successfully! Redirecting to WhatsApp...")
 
-    // Open WhatsApp after short delay
+    // Open WhatsApp after delay
     setTimeout(() => {
       window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank")
-    }, 800)
+    }, 900)
 
-    //  Clear form
+    // Clear form
     setName("")
     setEmail("")
     setMessage("")
