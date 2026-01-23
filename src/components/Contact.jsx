@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import contactImg from "../assets/contact.png" // change to your image
+import contactImg from "../assets/contact.png"
 
 /* ================= DYNAMIC DATA ================= */
 const contactData = {
@@ -15,8 +15,8 @@ const contactData = {
 
 const Contact = () => {
   return (
-    <section id="Contact" className="w-full bg-slate-900 text-white py-6 sm:py-8 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-6 sm:pb-14">
+    <section id="Contact" className="w-full bg-slate-900 text-white py-8 sm:py-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
 
         {/* CENTER HEADING */}
         <motion.h2
@@ -24,70 +24,67 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold mb-8  text-center"
+          className="text-3xl sm:text-4xl font-bold mb-10"
         >
           {contactData.title}
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        {/* IMAGE CENTER */}
+        {/* <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <motion.img
+            src={contactData.image}
+            alt="contact"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="w-64 sm:w-80 md:w-96"
+          />
+        </motion.div> */}
 
-          {/* LEFT IMAGE (DESKTOP ONLY) */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="hidden lg:flex justify-center"
-          >
-            <motion.img
-              src={contactData.image}
-              alt="contact"
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="max-w-3xl"
-            />
-          </motion.div>
+        {/* FORM CENTER */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <form className="space-y-6 w-full max-w-xl">
 
-          {/* RIGHT FORM */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-center lg:text-left"
-          >
-            <form className="space-y-6 max-w-xl mx-auto lg:mx-0">
+            {contactData.fields.map((field) =>
+              field.type === "textarea" ? (
+                <textarea
+                  key={field.id}
+                  placeholder={field.placeholder}
+                  rows="5"
+                  className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition resize-none"
+                />
+              ) : (
+                <input
+                  key={field.id}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition"
+                />
+              )
+            )}
 
-              {contactData.fields.map((field) =>
-                field.type === "textarea" ? (
-                  <textarea
-                    key={field.id}
-                    placeholder={field.placeholder}
-                    rows="5"
-                    className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition resize-none"
-                  />
-                ) : (
-                  <input
-                    key={field.id}
-                    type={field.type}
-                    placeholder={field.placeholder}
-                    className="w-full bg-slate-800 text-white p-4 rounded-lg border border-white/10 focus:outline-none focus:border-blue-500 transition"
-                  />
-                )
-              )}
+            {/* BUTTON */}
+            <button
+              type="submit"
+              className="bg-blue-600 hover:bg-blue-700 transition px-10 py-3 rounded-lg font-semibold text-lg w-full sm:w-auto"
+            >
+              {contactData.buttonText}
+            </button>
 
-              {/* BUTTON */}
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 transition px-8 py-2 sm:px-10 sm:py-4 rounded-lg font-semibold text-lg"
-              >
-                {contactData.buttonText}
-              </button>
+          </form>
+        </motion.div>
 
-            </form>
-          </motion.div>
-
-        </div>
       </div>
     </section>
   )
