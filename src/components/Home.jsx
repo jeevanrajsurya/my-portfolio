@@ -1,5 +1,5 @@
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa"
-import profileImg from "../assets/hero.png"
+import profileImg from "../assets/hero1.png"
 import { motion } from "framer-motion"
 
 /* ================= DYNAMIC DATA ================= */
@@ -21,7 +21,7 @@ const heroData = {
 
 const Home = () => {
 
-  // ✅ Smooth scroll function
+  // ✅ Smooth scroll to Projects
   const scrollToProjects = () => {
     const section = document.getElementById("Projects")
     section?.scrollIntoView({ behavior: "smooth" })
@@ -31,11 +31,11 @@ const Home = () => {
     <section id="Home" className="w-full bg-slate-900 text-white overflow-hidden py-6 sm:py-8 ">
       <div className="max-w-7xl mx-auto pt-4 sm:px-6 py-6 sm:pb-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12 items-center">
 
-        {/* LEFT CONTENT */}
+        {/* ================= LEFT CONTENT ================= */}
         <div className="text-center lg:text-left">
           <p className="text-lg">{heroData.greeting}</p>
 
-          <h2 className="text-2xl font-extrabold sm:font-extrabold sm:text-3xl text-orange-500">
+          <h2 className="text-2xl font-extrabold sm:text-3xl text-orange-500">
             {heroData.name}
           </h2>
 
@@ -56,7 +56,7 @@ const Home = () => {
             {heroData.description}
           </p>
 
-          {/* ✅ BUTTON SCROLLS TO PROJECTS */}
+          {/* BUTTON */}
           <button
             onClick={scrollToProjects}
             className="bg-orange-500 hover:bg-orange-600 transition px-4 py-3 sm:px-8 sm:py-4 rounded-lg font-medium text-lg"
@@ -65,11 +65,14 @@ const Home = () => {
           </button>
         </div>
 
-        {/* IMAGE + ICONS */}
-        <div className="flex flex-col items-center -mt-8 lg:mt-0 md:hidden lg:flex">
-          <motion.img
-            src={heroData.image}
-            alt="profile"
+        {/* ================= RIGHT IMAGE SECTION ================= */}
+        <div className="relative flex justify-center items-center md:hidden lg:flex">
+
+          {/* GLOW BACKGROUND */}
+          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-orange-500/20 blur-3xl rounded-full"></div>
+
+          {/* IMAGE CARD */}
+          <motion.div
             animate={{ y: [0, -16, 0] }}
             transition={{
               duration: 4,
@@ -77,9 +80,17 @@ const Home = () => {
               repeatType: "mirror",
               ease: "easeInOut",
             }}
-          />
+            className="relative bg-white/5 backdrop-blur-lg p-4 rounded-3xl border border-white/20 shadow-2xl"
+          >
+            <img
+              src={heroData.image}
+              alt="profile"
+              className="w-64 sm:w-80 md:w-96 rounded-2xl object-cover"
+            />
+          </motion.div>
 
-          <div className="flex gap-5 mt-6">
+          {/* SOCIAL ICONS */}
+          <div className="absolute -bottom-12 flex gap-5">
             {heroData.socials.map((item, index) => (
               <motion.a
                 key={index}
@@ -87,12 +98,13 @@ const Home = () => {
                 target="_blank"
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-white"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-white bg-black/40 backdrop-blur-md hover:bg-orange-500 transition"
               >
                 {item.icon}
               </motion.a>
             ))}
           </div>
+
         </div>
 
       </div>

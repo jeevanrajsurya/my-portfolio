@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
+import profileImg from "../assets/hero1.png"
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -61,10 +62,11 @@ const Header = () => {
             Download CV
           </a>
 
+          {/* PROFILE PHOTO */}
           <img
-            src="https://via.placeholder.com/40"
+            src={profileImg}
             alt="profile"
-            className="w-10 h-10 rounded-full object-cover ml-2"
+            className="w-10 h-10 rounded-full object-cover ml-2 border border-white/30"
           />
         </nav>
 
