@@ -69,7 +69,7 @@ const Home = () => {
         <div className="relative flex justify-center items-center md:hidden lg:flex">
 
           {/* GLOW BACKGROUND */}
-          <div className="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-orange-500/20 blur-3xl rounded-full"></div>
+          <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-orange-500/20 blur-3xl rounded-full"></div>
 
           {/* IMAGE CARD */}
           <motion.div
