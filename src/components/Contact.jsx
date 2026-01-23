@@ -11,34 +11,43 @@ const Contact = () => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // ✅ Basic Validation
+    //  Reset messages
+    setError("")
+    setSuccess("")
+
+    //  Empty field validation
     if (!name || !email || !message) {
       setError("Please fill all fields")
       return
     }
 
-    // ✅ Email Validation
+    //  Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailPattern.test(email)) {
       setError("Enter a valid email address")
       return
     }
 
-    setError("")
+    //  WhatsApp number 
+    const phoneNumber = "918778998453"
 
-    // ✅ WhatsApp Message Format
-    const phoneNumber = "918778998453" // CHANGE TO YOUR NUMBER
-
+    //  WhatsApp message format
     const whatsappMessage = `Hello Jeevanraj! 👋%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`
 
-    // ✅ Open WhatsApp
-    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank")
+    // Success message to user
+    setSuccess("Message sent successfully! Redirecting to WhatsApp...")
 
-    // ✅ Reset Form
+    // Open WhatsApp after short delay
+    setTimeout(() => {
+      window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank")
+    }, 800)
+
+    //  Clear form
     setName("")
     setEmail("")
     setMessage("")
@@ -73,6 +82,13 @@ const Contact = () => {
           {error && (
             <p className="text-red-500 text-sm font-medium">
               {error}
+            </p>
+          )}
+
+          {/* SUCCESS MESSAGE */}
+          {success && (
+            <p className="text-green-500 text-sm font-medium">
+              {success}
             </p>
           )}
 
