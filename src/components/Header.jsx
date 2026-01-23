@@ -7,6 +7,27 @@ const Header = () => {
 
   const menuItems = ["Home", "About", "Skills", "Projects", "Contact"]
 
+ const handleScroll = (item) => {
+  setActive(item)
+
+  const section = document.getElementById(item)
+  const header = document.querySelector("header")
+
+  if (section && header) {
+    const headerHeight = header.offsetHeight
+    const sectionTop = section.offsetTop - headerHeight - 10
+
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth"
+    })
+  }
+
+  setOpen(false) // close mobile dropdown
+}
+
+
+
   return (
     <header className="sticky top-0 z-50 w-full bg-slate-900 text-white shadow-lg shadow-black/10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -14,12 +35,12 @@ const Header = () => {
         {/* LOGO */}
         <h1 className="text-xl font-semibold">My Portfolio</h1>
 
-        {/* DESKTOP MENU (≥1024px) */}
+        {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-3">
           {menuItems.map((item) => (
             <button
               key={item}
-              onClick={() => setActive(item)}
+              onClick={() => handleScroll(item)}
               className={`
                 px-4 py-2 rounded-lg border transition
                 ${
@@ -44,7 +65,7 @@ const Header = () => {
           />
         </nav>
 
-        {/* MOBILE + TABLET ICON */}
+        {/* MOBILE ICON */}
         <button
           className="lg:hidden text-2xl"
           onClick={() => setOpen(!open)}
@@ -53,16 +74,13 @@ const Header = () => {
         </button>
       </div>
 
-      {/* MOBILE + TABLET DROPDOWN MENU */}
+      {/* MOBILE DROPDOWN */}
       {open && (
         <div className="lg:hidden bg-slate-900 border-t border-white/10 px-6 pb-4 space-y-2">
           {menuItems.map((item) => (
             <button
               key={item}
-              onClick={() => {
-                setActive(item)
-                setOpen(false)
-              }}
+              onClick={() => handleScroll(item)}
               className={`
                 w-full text-center px-4 py-3 rounded-lg border transition
                 ${

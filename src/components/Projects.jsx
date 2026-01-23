@@ -20,15 +20,7 @@ const projectsData = {
       tag: "React Project",
       link: "#",
     },
-    {
-      id: 2,
-      name: "Portfolio",
-      description:
-        "A leave management app for employees, streamlining leave tracking and approval processes.leave tracking and approval processes.",
-      image: project2,
-      tag: "React Project",
-      link: "#",
-    },
+   
    
   ],
 }
@@ -44,11 +36,11 @@ const Projects = () => {
   }, [])
 
   return (
-    <section className="w-full bg-slate-900 text-white py-16 sm:py-24">
+    <section id="Projects" className="w-full bg-slate-900 text-white py-6 sm:py-8 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ===== HEADING ===== */}
-        <h2 className="text-center text-3xl sm:text-4xl font-bold mb-10">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold mb-10 sm:mb-16">
           {projectsData.title}
         </h2>
 

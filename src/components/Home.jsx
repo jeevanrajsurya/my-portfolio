@@ -23,7 +23,7 @@ const heroData = {
 
 const Home = () => {
   return (
-    <section className="w-full bg-slate-900 text-white overflow-hidden ">
+    <section  id="Home" className="w-full bg-slate-900 text-white overflow-hidden py-6 sm:py-8 ">
       <div className="max-w-7xl mx-auto pt-4  sm:px-6 py-6 sm:pb-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}

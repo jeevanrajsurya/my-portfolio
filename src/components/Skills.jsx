@@ -163,7 +163,7 @@ const skillsData = {
 
 const Skills = () => {
   return (
-    <section className="w-full bg-slate-900 text-white py-4 sm:py-20">
+    <section id="Skills" className="w-full bg-slate-900 text-white py-6 sm:py-8 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADING */}

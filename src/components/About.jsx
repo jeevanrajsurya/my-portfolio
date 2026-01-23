@@ -74,7 +74,7 @@ const beyondCodingData = {
 
 const About = () => {
   return (
-    <section className="w-full bg-slate-900 text-white py-14  sm:py-14">
+    <section id="About" className="w-full bg-slate-900 text-white py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ABOUT ME */}
