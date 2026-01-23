@@ -4,8 +4,6 @@ import "aos/dist/aos.css"
 
 /* ===== IMPORT YOUR IMAGES ===== */
 import project1 from "../assets/project1.png"
-import project2 from "../assets/project2.png"
-
 
 /* ================= PROJECT DATA ================= */
 const projectsData = {
@@ -18,14 +16,12 @@ const projectsData = {
         "A Full Stack movie ticket booking web application built using MERN Stack. Includes movie listings, seat selection UI, user authentication, and a smooth booking experience with responsive design.",
       image: project1,
       tag: "MERN Stack Project",
-      link: "#",
+      link: "https://jeevanraj-bookmyshow.netlify.app/",
     },
   ],
 }
 
-
 const Projects = () => {
-
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -35,7 +31,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="Projects" className="w-full bg-slate-900 text-white py-6 sm:py-8 ">
+    <section id="Projects" className="w-full bg-slate-900 text-white py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* ===== HEADING ===== */}
@@ -44,13 +40,7 @@ const Projects = () => {
         </h2>
 
         {/* ===== PROJECT GRID ===== */}
-        <div className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          lg:grid-cols-3
-          gap-10
-        ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {projectsData.projects.map((project, index) => (
             <div
@@ -70,11 +60,10 @@ const Projects = () => {
 
               {/* ===== IMAGE AREA ===== */}
               <div className="relative">
-
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-40 sm:h-48 p-3 rounded-3xl object-cover"
+                  className="w-full h-40 sm:h-48 p-3 rounded-3xl object-cover pointer-events-none"
                 />
 
                 {/* TAG BADGE */}
@@ -89,7 +78,6 @@ const Projects = () => {
                 ">
                   {project.tag}
                 </span>
-
               </div>
 
               {/* ===== CONTENT ===== */}
@@ -103,8 +91,10 @@ const Projects = () => {
                   {project.description}
                 </p>
 
+                {/* ===== MOBILE SAFE VIEW BUTTON ===== */}
                 <a
                   href={project.link}
+                  target="_self"
                   className="
                     inline-block
                     bg-blue-600 hover:bg-blue-700
@@ -120,12 +110,10 @@ const Projects = () => {
                 </a>
 
               </div>
-
             </div>
           ))}
 
         </div>
-
       </div>
     </section>
   )
