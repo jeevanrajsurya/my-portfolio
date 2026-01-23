@@ -7,26 +7,24 @@ const Header = () => {
 
   const menuItems = ["Home", "About", "Skills", "Projects", "Contact"]
 
- const handleScroll = (item) => {
-  setActive(item)
+  const handleScroll = (item) => {
+    setActive(item)
 
-  const section = document.getElementById(item)
-  const header = document.querySelector("header")
+    const section = document.getElementById(item)
+    const header = document.querySelector("header")
 
-  if (section && header) {
-    const headerHeight = header.offsetHeight
-    const sectionTop = section.offsetTop - headerHeight - 10
+    if (section && header) {
+      const headerHeight = header.offsetHeight
+      const sectionTop = section.offsetTop - headerHeight - 10
 
-    window.scrollTo({
-      top: sectionTop,
-      behavior: "smooth"
-    })
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth"
+      })
+    }
+
+    setOpen(false)
   }
-
-  setOpen(false) // close mobile dropdown
-}
-
-
 
   return (
     <header className="sticky top-0 z-50 w-full bg-slate-900 text-white shadow-lg shadow-black/10 border-t border-white/5">
@@ -54,9 +52,14 @@ const Header = () => {
             </button>
           ))}
 
-          <button className="ml-2 border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
+          {/* DOWNLOAD CV */}
+          <a
+            href="/Jeevanraj_Resume.pdf"
+            download
+            className="ml-2 border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
+          >
             Download CV
-          </button>
+          </a>
 
           <img
             src="https://via.placeholder.com/40"
@@ -66,10 +69,7 @@ const Header = () => {
         </nav>
 
         {/* MOBILE ICON */}
-        <button
-          className="lg:hidden text-2xl"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="lg:hidden text-2xl" onClick={() => setOpen(!open)}>
           {open ? <FiX /> : <FiMenu />}
         </button>
       </div>
@@ -94,9 +94,14 @@ const Header = () => {
             </button>
           ))}
 
-          <button className="w-full border border-white py-3 rounded-lg hover:bg-white hover:text-black transition">
+          {/* DOWNLOAD CV MOBILE */}
+          <a
+            href="/Jeevanraj_Resume.pdf"
+            download
+            className="block w-full text-center border border-white py-3 rounded-lg hover:bg-white hover:text-black transition"
+          >
             Download CV
-          </button>
+          </a>
         </div>
       )}
     </header>
