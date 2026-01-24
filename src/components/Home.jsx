@@ -15,7 +15,7 @@ const heroData = {
   socials: [
     { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/in/c-jeevanraj/" },
     { icon: <FaGithub />, link: "https://github.com/jeevanrajsurya/" },
-    // { icon: <FaFacebookF />, link: "#" },
+    { icon: <FaFacebookF />, link: "#" },
   ],
 }
 
