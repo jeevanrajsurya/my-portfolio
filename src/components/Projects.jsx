@@ -16,7 +16,7 @@ const projectsData = {
         "A Full Stack movie ticket booking web application built using MERN Stack. Includes movie listings, seat selection UI, user authentication, and a smooth booking experience with responsive design.",
       image: project1,
       tag: "MERN Stack Project",
-      link: "https://jeevanraj-bookmyshow.netlify.app/",
+      link: "https://frontend-bookmyshow-lac.vercel.app/",
     },
   ],
 }
