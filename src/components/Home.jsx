@@ -2,7 +2,7 @@ import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa"
 import profileImg from "../assets/hero1.png"
 import { motion } from "framer-motion"
 
-/* ================= DYNAMIC DATA ================= */
+/* =================  DATA ================= */
 const heroData = {
   greeting: "Hello, I'm",
   name: "Jeevanraj Chithambaram",
@@ -21,7 +21,7 @@ const heroData = {
 
 const Home = () => {
 
-  // ✅ Smooth scroll to Projects
+  //  Smooth scroll 
   const scrollToProjects = () => {
     const section = document.getElementById("Projects")
     section?.scrollIntoView({ behavior: "smooth" })
@@ -65,10 +65,10 @@ const Home = () => {
           </button>
         </div>
 
-        {/* ================= RIGHT IMAGE SECTION ================= */}
+        {/* ================= RIGHT  SECTION ================= */}
         <div className="relative flex justify-center items-center md:hidden lg:flex">
 
-          {/* GLOW BACKGROUND */}
+          {/*  BACKGROUND */}
           <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-orange-500/20 blur-3xl rounded-full"></div>
 
           {/* IMAGE CARD */}
