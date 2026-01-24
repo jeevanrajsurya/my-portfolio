@@ -127,22 +127,22 @@ const About = () => {
         </div>
 
         {/* BEYOND CODING */}
-<h3 className="text-center text-3xl sm:text-4xl font-bold text-rose-400 mb-8">
-  {beyondCodingData.title}
-</h3>
+        <h3 className="text-center text-3xl sm:text-4xl font-bold text-rose-400 mb-8">
+        {beyondCodingData.title}
+        </h3>
 
-<div className="max-w-full mx-auto text-left space-y-6">
-  {beyondCodingData.sections.map((item) => (
-    <p
-      key={item.id}
-      className="text-gray-200 text-base sm:text-lg leading-relaxed"
-    >
-      {item.text}
-    </p>
-  ))}
-</div>
+        <div className="max-w-full mx-auto text-left space-y-6">
+        {beyondCodingData.sections.map((item) => (
+        <p
+        key={item.id}
+        className="text-gray-200 text-base sm:text-lg leading-relaxed"
+        >
+        {item.text}
+      </p>
+      ))}
+    </div>
 
-      </div>
+    </div>
     </section>
   )
 }
