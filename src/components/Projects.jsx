@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-/* ===== IMPORT YOUR IMAGES ===== */
+/* ===== IMPORT IMAGES ===== */
 import project1 from "../assets/project1.png"
 
 /* ================= PROJECT DATA ================= */
@@ -58,7 +58,7 @@ const Projects = () => {
               "
             >
 
-              {/* ===== IMAGE AREA ===== */}
+              {/* ===== IMAGE  ===== */}
               <div className="relative">
                 <img
                   src={project.image}
@@ -91,7 +91,7 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* ===== MOBILE SAFE VIEW BUTTON ===== */}
+                {/* ===== MOBILE ===== */}
                 <a
                   href={project.link}
                   target="_self"
