@@ -71,14 +71,14 @@ const skillsData = {
         {
           id: 3,
           name: "React-Bootstrap",
-          level: "Beginner",
+          level: "Intermediate",
           percent: 40,
           icon: <FaBootstrap className="text-blue-500 text-3xl" />,
         },
         {
           id: 4,
           name: "Tailwind CSS",
-          level: "Beginner",
+          level: "Intermediate",
           percent: 40,
           icon: <SiTailwindcss className="text-blue-500 text-3xl" />,
         },
@@ -93,7 +93,7 @@ const skillsData = {
         {
           id: 1,
           name: "Redux Toolkit",
-          level: "Advanced",
+          level: "Intermediate",
           percent: 75,
           icon: <SiRedux className="text-blue-500 text-3xl" />,
         },
