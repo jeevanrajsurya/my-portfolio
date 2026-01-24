@@ -26,7 +26,7 @@ const Contact = () => {
       return
     }
 
-    // Ultra strict email validation
+    //  email validation
     const emailPattern = /^[a-zA-Z0-9._%+-]{3,}@[a-zA-Z0-9.-]{3,}\.[a-zA-Z]{2,}$/
 
     if (!email.trim()) {
@@ -44,16 +44,16 @@ const Contact = () => {
       return
     }
 
-    // WhatsApp number (CHANGE IF NEEDED)
+    // WhatsApp number
     const phoneNumber = "918778998453"
 
-    // WhatsApp message format
+    // message format
     const whatsappMessage = `Hello Jeevanraj! %0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`
 
-    // Show success message
+    // success message
     setSuccess("Message sent successfully! Redirecting to WhatsApp...")
 
-    // Open WhatsApp after delay
+    // WhatsApp after delay
     setTimeout(() => {
       window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank")
     }, 900)
