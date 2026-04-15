@@ -55,7 +55,7 @@ const Header = () => {
 
           {/* DOWNLOAD CV */}
           <a
-            href="/Jeevanraj_fullstack1_CV.pdf"
+            href="/jr.pdf"
             download
             className="ml-2 border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
           >
